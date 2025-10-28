@@ -35,6 +35,49 @@
     h1,h2,h3,p,li,small{color:#e6d0bf}
     .muted{color:var(--muted)}
 
+    /* Individual framed experience cards */
+    #experience .xp {
+      border: 2px solid var(--brand);
+      border-radius: 14px;
+      padding: 16px 18px;
+      background: color-mix(in oklab, var(--panel) 90%, var(--bg));
+      box-shadow: inset 0 0 0 1px var(--ring), var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    #experience .xp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Section title */
+    #experience h2 {
+      margin-bottom: 14px;
+      color: #e6d0bf;
+    }
+
+    /* Subtitles (job titles) use brand color */
+    #experience h3 {
+      color: #974c1f;
+      margin-bottom: 2px; /* reduce spacing below job title */
+    }
+
+    /* Date & location line */
+    #experience .meta {
+      color: #974c1f;
+      font-weight: 500;
+      margin-top: 0; /* ensure no extra gap above */
+    }
+
+    /* Bullet text */
+    #experience li {
+      color: #223b3f;
+    }
+
+    /* Highlight text */
+    #experience strong {
+      color: #223b3f;
+    }
+
     /* Projects grid refined */
     .grid{display:grid;grid-template-columns:1fr;gap:20px}
     @media (min-width: 640px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -124,7 +167,7 @@
       <aside class="card">
         <h2 class="sr-only">Quick facts</h2>
         <ul class="facts">
-          <li>🎓 B.Eng. Chemical Engineering</li>
+          <li>🎓 Parahyangan Catholic University • B.Eng. Chemical Engineering</li>
           <li>🧭 Focus: analytics, dashboards, storytelling</li>
           <li>🗂️ Tools: Python, SQL, Tableau, Sheets</li>
         </ul>
@@ -145,6 +188,46 @@
       </div>
     </div>
   </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="xp-list">
+
+        <article class="xp" aria-label="Sales Executive at PT. Colorindo Chemtra">
+          <h3>Sales Executive — PT. Colorindo Chemtra</h3>
+          <div class="meta">Jan 2023 – Jun 2025 · Jakarta, Indonesia</div>
+          <ul>
+            <li>Built and maintained relationships with <strong>70+ active customers</strong> by documenting individual needs through regular visits and phone contacts, improving retention and driving repeat purchases by <strong>130%</strong>.</li>
+            <li>Promoted products to new and existing clients through exhibitions and regular visits, expanding my personal customer base to <strong>~300 customers</strong> and contributing to overall revenue growth.</li>
+            <li>Executed targeted customer engagement strategies that delivered <strong>95% year‑on‑year sales growth</strong>.</li>
+          </ul>
+        </article>
+
+        <article class="xp" aria-label="Industrial Microbiology Lab Assistant at Parahyangan Catholic University">
+          <h3>Industrial Microbiology Laboratory Assistant — Parahyangan Catholic University</h3>
+          <div class="meta">Jan 2022 – Jun 2022 · Bandung, Indonesia</div>
+          <ul>
+            <li>Assisted and evaluated <strong>78 second-year students</strong> during the first in-person lab sessions after COVID using standardized experiment guidelines and team-based supervision, ensuring consistent instruction and adherence to safety protocols.</li>
+            <li>Developed standardized guides and coordinated <strong>7 co-assistants</strong> by aligning materials with updated post-COVID curriculum, then formatted them into shared PowerPoint and pre-lab briefings, ensuring consistent instruction and <strong>100% on-schedule completion</strong> of all sessions.</li>
+          </ul>
+        </article>
+
+        <article class="xp" aria-label="Industrial Microbiology Lab Assistant at Parahyangan Catholic University">
+          <h3>Basic Science Laboratory Assistant — Parahyangan Catholic University</h3>
+          <div class="meta">Aug 2021 – Dec 2021 · Bandung, Indonesia</div>
+          <ul>
+            <li>Monitored and assessed <strong>60 first-year students</strong> using structured evaluation forms and experiment rubrics, ensuring clear understanding of each experiment’s objectives and procedures.</li>
+            <li> Standardized experiment workflows and managed <strong>9 co-assistants</strong> via collaborative documentation (PowerPoint + Google Sheets), achieving full delivery consistency across all lab sessions.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
