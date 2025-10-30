@@ -31,7 +31,7 @@
     }
 
     .subtitle {
-      color: #e6d0bf;
+      color: var(--muted);
       font-weight: 600;
       letter-spacing: 0.3px;
       margin-top: 6px;
@@ -96,10 +96,49 @@
       transform: translateY(-1px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
+    /* NAV BAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(160%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--ring);
+      z-index: 50;
+      padding: 10px 0;
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .project-title {
+      color: #e6d0bf;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      font-size: 1.05rem;
+    }
+
+    /* FRAMED BUTTON */
+    .framed-btn {
+      border: 2px solid var(--brand);
+      background: var(--brand);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
   </style>
 </head>
 
 <body>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Project Navigation">
+    <div class="container nav-wrap">
+      <a class="btn btn-ghost framed-btn" href="../index.html">
+        ← Back to Portfolio
+      </a>
+      <span class="project-title">RevoFinance</span>
+    </div>
+  </nav>
   <header class="hero">
     <div class="container">
       <h1>RevoFinance — Expense & Budget Utilization Dashboard</h1>

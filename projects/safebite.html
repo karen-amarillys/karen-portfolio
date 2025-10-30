@@ -70,6 +70,11 @@
       box-shadow: var(--shadow);
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
+    .badge:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+          background: color-mix(in oklab, var(--panel) 12%, transparent);
+        }
     /* --- Deliverables card --- */
     .deliverables {
       text-align: center;
@@ -108,12 +113,50 @@
       transform: translateY(-1px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
+    /* NAV BAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(160%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--ring);
+      z-index: 50;
+      padding: 10px 0;
+    }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .project-title {
+      color: #e6d0bf;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      font-size: 1.05rem;
+    }
 
-
+    /* FRAMED BUTTON */
+    .framed-btn {
+      border: 2px solid var(--brand);
+      background: var(--brand);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
   </style>
 </head>
 
 <body>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Project Navigation">
+    <div class="container nav-wrap">
+      <a class="btn btn-ghost framed-btn" href="../index.html">
+        ← Back to Portfolio
+      </a>
+      <span class="project-title">Safebite Analytics</span>
+    </div>
+  </nav>
+
   <header class="hero">
     <div class="container">
       <h1>SafeBite Analytics — Food Adulteration</h1>
@@ -192,12 +235,6 @@
         <a class="btn btn-ghost" href="../safebite-analytics_karen.pdf" target="_blank">Open PDF Report</a>
       </div>
     </section>
-
-    <!-- BACK BUTTON -->
-    <div style="margin-top: 40px;">
-      <a class="btn btn-ghost" href="../index.html">← Back to Portfolio</a>
-    </div>
-  </main>
 
   <footer class="footer" style="margin-top: 40px;">
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
