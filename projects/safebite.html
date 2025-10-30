@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SafeBite Analytics — Karen Amarillys</title>
+  <link rel="stylesheet" href="../assets/project.css" />
+  <style>
+    /* --- Card layout for project detail sections --- */
+    .section-card {
+      background: color-mix(in oklab, var(--panel) 95%, white);
+      border: 2px solid var(--brand);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .section-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    .section-card h2 {
+      color: var(--brand);
+      margin-top: 0;
+    }
+    .section-card ul {
+      padding-left: 20px;
+    }
+    .section-card li {
+      margin-bottom: 6px;
+    }
+    .subtitle {
+  color: var(--muted);          /* uses #e5af90 */
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-top: 6px;
+}
+    .actions {
+      margin-top: 16px;
+    }
+    .actions .btn {
+      margin-right: 12px;
+    }
+    /* --- Subheader subtitle + badges (matches Skills section) --- */
+    .subtitle {
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .badge {
+      border: 1px solid var(--ring);
+      background: transparent;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #e6d0bf;
+      text-decoration: none;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    /* --- Deliverables card --- */
+    .deliverables {
+      text-align: center;
+      background: color-mix(in oklab, var(--panel) 95%, white);
+      border: 2px solid var(--brand);
+      border-radius: 16px;
+      padding: 30px 24px;
+      margin-top: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .deliverables:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .deliverable-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .deliverable-buttons .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .deliverable-buttons .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>SafeBite Analytics — Food Adulteration</h1>
+      <p class="subtitle">Data End-to-End Portfolio Project | RevoU Full-Stack Data Analytics</p>
+
+      <!-- TOOLS USED (same as Skills badges) -->
+      <div class="badges" aria-label="Tools used">
+        <span class="badge">Python (pandas)</span>
+        <span class="badge">Google Sheets</span>
+        <span class="badge">Tableau</span>
+        <span class="badge">EDA</span>
+        <span class="badge">OBIPR</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Project Thumbnail -->
+    <div class="thumb" style="height: 580px; overflow: hidden; border-radius: 12px; border: 1px solid var(--ring); margin-bottom: 20px;">
+      <embed src="../safebite-analytics_karen.pdf#page=1&view=FitH" type="application/pdf" width="100%" height="100%">
+    </div>
+
+    <!-- CARD 1: BACKGROUND -->
+    <section class="section-card">
+      <h2>Background & Context</h2>
+      <p>
+      Food adulteration remains common and risky for public health. The project builds a data-driven way to surface high-risk products, adulterants, and brands so regulators can prioritize inspections and actions.
+      </p>
+    </section>
+
+    <!-- CARD 2: METHOD -->
+    <section class="section-card">
+      <h2>Approach, Method & Strategy</h2>
+      <p>
+        Dataset of 1,000 recorded adulteration cases was processed using Python and Google Sheets for cleaning and Tableau for visualization.
+        Analysis focused on frequency, severity, and product–adulterant correlation. Insights were summarized into an interactive dashboard for
+        regulatory decision-making.
+      </p>
+      <ul>
+        <li><strong>Tools:</strong> Python (pandas), Google Sheets, Tableau</li>
+        <li><strong>Process:</strong> Data Cleaning → Exploratory Data Analysis → Visualization → Insights & Recommendations</li>
+        <li><strong>Scope:</strong> 1000 food adulteration reports on Jan 2024 — Jun 2024</li>
+      </ul>
+    </section>
+
+    <!-- CARD 3: RESULTS -->
+    <section class="section-card">
+      <h2>Results & Key Metrics</h2>
+      <ul>
+        <li><strong>Juice (124), Chicken (120), and Milk (107)</strong> — top high-risk products</li>
+        <li>Most common adulterants: <strong>Coloring agents (215), Chalk (202), Artificial sweeteners (196), Melamine (194), Water (193)</strong></li>
+        <li><strong>Brand C recorded 222 cases</strong> — the most frequent offender</li>
+      </ul>
+    </section>
+
+    <!-- CARD 4: IMPACT -->
+    <section class="section-card">
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Prioritize monitoring of coloring agents & chalk (highest severity & frequency)</li>
+        <li>Conduct regular and more frequent inspections, especially in non-festive periods</li>
+        <li>Tighten enforcement: fines, product recalls, and penalties for repeat offenders</li>
+        <li>Improve consumer awareness</li>
+      </ul>
+    </section>
+
+    <!-- CARD 5: DELIVERABLES -->
+    <section class="section-card deliverables">
+      <h2 style="text-align:center; color: var(--brand);">Deliverables</h2>
+      <p style="text-align:center; color: var(--text); margin-bottom:20px;">
+        Explore the interactive dashboard or download the complete report below.
+      </p>
+      <div class="deliverable-buttons">
+        <a class="btn" href="https://public.tableau.com/app/profile/karen.amarillys/viz/SAFEBITEANALYTICSDEEPPProject/OverallDashboard?publish=yes" target="_blank">View Dashboard</a>
+        <a class="btn btn-ghost" href="../safebite-analytics_karen.pdf" target="_blank">Open PDF Report</a>
+      </div>
+    </section>
+
+    <!-- BACK BUTTON -->
+    <div style="margin-top: 40px;">
+      <a class="btn btn-ghost" href="../index.html">← Back to Portfolio</a>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 40px;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <small>© <span id="year"></span> Karen Amarillys. All rights reserved.</small>
+      <nav aria-label="Footer">
+        <a href="../index.html#about" class="muted" style="margin-right:10px">About</a>
+        <a href="../index.html#projects" class="muted" style="margin-right:10px">Projects</a>
+        <a href="../index.html#contact" class="muted">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

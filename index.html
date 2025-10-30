@@ -141,6 +141,27 @@
     @media(min-width:768px){.hero .row{flex-direction:row;justify-content:space-between}}
     .hero-img img{max-width:320px;border-radius:12px;box-shadow:var(--shadow)}
     .chip{color:#e6d0bf;font-weight:500}
+
+/* Make PDF preview look like an image and click-through to detail page */
+.proj { position: relative; }
+.proj .thumb{
+  height: 160px;            /* your old height */
+  overflow: hidden;         /* clip any scrollbars */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: var(--card);
+}
+.proj .thumb embed{
+  /* oversize + offset to push built-in PDF scrollbars out of view */
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  margin: -20px 0 0 -20px;
+
+  display: block;
+  border: 0;
+  pointer-events: none;     /* pass clicks to the anchor */
+}
+
   </style>
 </head>
 <body>
@@ -172,7 +193,7 @@
       </div>
       <div>
         <span class="chip">Jakarta, Indonesia • Data Analyst</span>
-        <h1>Hi, I’m Karen — I turn messy data into clear, actionable stories.</h1>
+        <h1>Hi, I’m Karen</h1>
         <p class="lead">I’m Karen, an aspiring data analyst with a background in sales and engineering. I turn raw data into clear insights and practical dashboards that help teams make better decisions.</p>
         <div class="cta">
         <a class="btn" href="#projects">See projects</a>
@@ -236,7 +257,7 @@
             <img src="unpar-logo.png" alt="Parahyangan Catholic University logo" class="edu-logo">
             <div class="edu-title">
               <h3>Parahyangan Catholic University</h3>
-              <p class="meta">Chemical Engineering, 2018 – 2022</p>
+              <p class="meta">Chemical Engineering, Aug 2018 – Aug 2022</p>
             </div>
           </div>
           <ul>
@@ -290,32 +311,32 @@
     <div class="container">
       <h2>Projects</h2>
       <div class="grid">
-        <!-- DEEPP -->
-        <a class="proj" href="%5BDEEPP%5D%20Karen_Amarillys.pdf" target="_blank" rel="noreferrer" aria-label="Open DEEPP Analytics PDF">
+        <!-- SafeBite -->
+        <a class="proj" href="projects/safebite.html">
           <div class="thumb">
-            <embed src="%5BDEEPP%5D%20Karen_Amarillys.pdf#page=1&view=FitH" type="application/pdf" style="width:100%;height:100%" />
+            <embed src="safebite-analytics_karen.pdf" type="application/pdf">
           </div>
           <div class="body">
-            <h3>Safebite Analytics — Food Adulteration</h3>
+            <h3>SafeBite Analytics — Food Adulteration</h3>
             <p>Exploratory analysis identifying high-risk products and enforcement priorities.</p>
           </div>
         </a>
 
-        <!-- Revobank FSDA -->
-        <a class="proj" href="revobank_Karen_Amarillys.pdf" target="_blank" rel="noreferrer" aria-label="Open Revobank FSDA PDF">
+        <!-- RevoBank -->
+        <a class="proj" href="projects/revobank.html">
           <div class="thumb">
-            <embed src="revobank_Karen_Amarillys.pdf#page=1&view=FitH" type="application/pdf" style="width:100%;height:100%" />
+            <embed src="revobank_karen.pdf#page=1&view=FitH" type="application/pdf">
           </div>
           <div class="body">
-            <h3>Revobank — Sales Performance & RFM</h3>
+            <h3>RevoBank — Sales Performance & RFM</h3>
             <p>Credit-card portfolio analysis using EDA and RFM segmentation.</p>
           </div>
         </a>
 
-        <!-- DataViz Personal Finance -->
-        <a class="proj" href="%5BDataViz%20JUN25%5D_Karen_Amarillys.pdf" target="_blank" rel="noreferrer" aria-label="Open Personal Finance Dashboard PDF">
+        <!-- RevoFinance -->
+        <a class="proj" href="projects/revofinance.html">
           <div class="thumb">
-            <embed src="%5BDataViz%20JUN25%5D_Karen_Amarillys.pdf#page=1&view=FitH" type="application/pdf" style="width:100%;height:100%" />
+            <embed src="revofinance_karen.pdf#page=1&view=FitH" type="application/pdf">
           </div>
           <div class="body">
             <h3>RevoFinance — Expense & Budget Dashboard</h3>
@@ -323,10 +344,10 @@
           </div>
         </a>
 
-        <!-- SQL RevoGrocers -->
-        <a class="proj" href="%5BSQL%20JUN25%5D%20Karen_Amarillys.pdf" target="_blank" rel="noreferrer" aria-label="Open SQL RevoGrocers PDF">
+        <!-- RevoGrocers -->
+        <a class="proj" href="projects/revogrocers.html">
           <div class="thumb">
-            <embed src="%5BSQL%20JUN25%5D%20Karen_Amarillys.pdf#page=1&view=FitH" type="application/pdf" style="width:100%;height:100%" />
+            <embed src="revogrocers_karen.pdf#page=1&view=FitH" type="application/pdf">
           </div>
           <div class="body">
             <h3>RevoGrocers — SQL Sales Analysis</h3>
@@ -334,14 +355,25 @@
           </div>
         </a>
 
-        <!-- W2W3 Campaign Evaluation -->
-        <a class="proj" href="%5BW2W3%20JUN25%5D_Karen_Amarillys_intermediate.pdf" target="_blank" rel="noreferrer" aria-label="Open Campaign Evaluation PDF">
+        <!-- TokoBli -->
+        <a class="proj" href="projects/tokobli.html">
           <div class="thumb">
-            <embed src="%5BW2W3%20JUN25%5D_Karen_Amarillys_intermediate.pdf#page=1&view=FitH" type="application/pdf" style="width:100%;height:100%" />
+            <embed src="tokobli_karen.pdf#page=1&view=FitH" type="application/pdf">
           </div>
           <div class="body">
             <h3>TokoBli — Campaign Evaluation</h3>
             <p>Comparison of 10/10–11/11–12/12 campaigns to optimize the next promo.</p>
+          </div>
+        </a>
+
+        <!-- RevoStore -->
+        <a class="proj" href="projects/revostore.html" target="_blank" rel="noreferrer" aria-label="Open RevoStore Project Page">
+          <div class="thumb">
+            <embed src="revostore_karen.pdf#page=1&view=FitH" type="application/pdf">
+          </div>
+          <div class="body">
+            <h3>RevoStore — Profit Decline Analysis</h3>
+            <p>End-to-end business diagnosis using MECE & SMART frameworks to identify profit drop causes and recovery strategies.</p>
           </div>
         </a>
       </div> <!-- end .grid -->

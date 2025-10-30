@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RevoFinance — Expense & Budget Utilization Dashboard</title>
+  <link rel="stylesheet" href="../assets/project.css" />
+  <style>
+    .section-card {
+      background: color-mix(in oklab, var(--panel) 95%, white);
+      border: 2px solid var(--brand);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .section-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    .section-card h2 {
+      color: var(--brand);
+      margin-top: 0;
+    }
+    .section-card ul {
+      padding-left: 20px;
+    }
+    .section-card li {
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #e6d0bf;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .badge {
+      border: 1px solid var(--ring);
+      background: transparent;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #e6d0bf;
+      text-decoration: none;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      background: color-mix(in oklab, var(--panel) 12%, transparent);
+    }
+
+    .deliverables {
+      text-align: center;
+      background: color-mix(in oklab, var(--panel) 95%, white);
+      border: 2px solid var(--brand);
+      border-radius: 16px;
+      padding: 30px 24px;
+      margin-top: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .deliverables:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    .deliverable-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .deliverable-buttons .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .deliverable-buttons .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>RevoFinance — Expense & Budget Utilization Dashboard</h1>
+      <p class="subtitle">Data Visualization Project | RevoU Full-Stack Data Analytics</p>
+
+      <div class="badges" aria-label="Tools used">
+        <span class="badge">Tableau</span>
+        <span class="badge">Google Sheets</span>
+        <span class="badge">Data Joining</span>
+        <span class="badge">Budget Utilization</span>
+        <span class="badge">EDA</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="thumb" style="height: 580px; overflow: hidden; border-radius: 12px; border: 1px solid var(--ring); margin-bottom: 20px;">
+      <embed src="../revofinance_karen.pdf#page=1&view=FitH" type="application/pdf" width="100%" height="100%">
+    </div>
+
+    <!-- CARD 1: BACKGROUND -->
+    <section class="section-card">
+      <h2>Background & Context</h2>
+      <p>
+        The RevoFinance project focuses on helping individuals monitor personal expenses, evaluate budget utilization, and
+        identify spending trends. The dashboard was developed using real-world-style datasets to simulate everyday
+        financial tracking, showing how data visualization supports smarter financial decisions and proactive budgeting.
+      </p>
+    </section>
+
+    <!-- CARD 2: METHOD -->
+    <section class="section-card">
+      <h2>Approach, Method & Strategy</h2>
+      <p>
+        Three datasets — <strong>Personal_Expenses</strong>, <strong>Merchant_Master</strong>, and <strong>Annual_Budget</strong> — were joined using inner joins
+        based on <code>merchant_id</code> and <code>category</code> keys to ensure each expense was mapped correctly to both
+        merchant details and its corresponding budget category. Tableau was used to visualize metrics such as total
+        expenses, spending per category, and monthly trends.
+      </p>
+      <ul>
+        <li><strong>Tools:</strong> Tableau, Google Sheets</li>
+        <li><strong>Analysis:</strong> Expense tracking, budget utilization, trend analysis, and distribution insights</li>
+        <li><strong>Scope:</strong> 1,000+ personal transactions across multiple spending categories</li>
+      </ul>
+    </section>
+
+    <!-- CARD 3: RESULTS -->
+    <section class="section-card">
+      <h2>Results & Key Insights</h2>
+      <ul>
+        <li><strong>Total Expense:</strong> Snapshot of overall spending, highlighting higher spending per transaction, indicating fewer but larger purchases.</li>
+        <li><strong>Spend per Category:</strong> Utilities and dining showed the highest proportions, while online services are rising and need control.</li>
+        <li><strong>Budget Utilization (%):</strong> Revealed overspending risks in certain categories — requiring adjustments to allocations.</li>
+        <li><strong>Spending Trend:</strong> Monthly line chart showed seasonal surges (holidays, year-end), useful for predictive budgeting.</li>
+        <li><strong>Transaction Distribution:</strong> Histogram indicated spending was habitual and mid-range — predictable, not sporadic.</li>
+        <li><strong>Top Merchants:</strong> Bakso Pak Kumis, PLN Loket Jakarta, and Bioskop Nusantara — consistent spending drivers.</li>
+      </ul>
+    </section>
+
+    <!-- CARD 4: RECOMMENDATIONS -->
+    <section class="section-card">
+      <h2>Recommendations</h2>
+      <ul>
+        <li><strong>Budget Rebalancing:</strong> Shift underused funds toward overspent categories for a more balanced allocation.</li>
+        <li><strong>Expense Awareness:</strong> Set monthly spending caps and alerts to prevent habitual overspending.</li>
+        <li><strong>Category Control:</strong> Closely monitor utilities and online services to prevent repetitive high expenses.</li>
+        <li><strong>Predictive Planning:</strong> Anticipate high-spending periods (holiday peaks) and allocate buffers in advance.</li>
+        <li><strong>Merchant Analysis:</strong> Evaluate top merchants for potential subscription optimization or loyalty benefits.</li>
+      </ul>
+    </section>
+
+    <!-- CARD 5: DELIVERABLES -->
+    <section class="section-card deliverables">
+      <h2 style="text-align:center; color: var(--brand);">Deliverables</h2>
+      <p style="text-align:center; color: var(--text); margin-bottom:20px;">
+        View the interactive Tableau dashboard or download the full project report below.
+      </p>
+      <div class="deliverable-buttons">
+        <a class="btn" href="https://public.tableau.com/app/profile/karen.amarillys/viz/DataVizJUN25_Karen_Amarillys/Dashboard2?publish=yes" target="_blank">View Dashboard</a>
+        <a class="btn btn-ghost" href="../revofinance_karen.pdf" target="_blank">Open PDF Report</a>
+      </div>
+    </section>
+
+    <div style="margin-top: 40px;">
+      <a class="btn btn-ghost" href="../index.html">← Back to Portfolio</a>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 40px;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <small>© <span id="year"></span> Karen Amarillys. All rights reserved.</small>
+      <nav aria-label="Footer">
+        <a href="../index.html#about" class="muted" style="margin-right:10px">About</a>
+        <a href="../index.html#projects" class="muted" style="margin-right:10px">Projects</a>
+        <a href="../index.html#contact" class="muted">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
