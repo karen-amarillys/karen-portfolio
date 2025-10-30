@@ -30,12 +30,38 @@
     .btn-ghost{border:1px solid var(--brand);background:transparent;color:#e6d0bf}
     .btn-ghost:hover{background:var(--brand);color:#fff}
     .icon{width:18px;height:18px;display:inline-block}
-    .toggle{border:1px solid var(--ring);background:transparent;color:var(--muted);cursor:pointer;border-radius:10px;padding:8px}
     section h2{color:#e6d0bf}
     h1,h2,h3,p,li,small{color:#e6d0bf}
     .muted{color:var(--muted)}
 
-    /* Individual framed experience cards */
+    /* Skill badges (frames) */
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+    .badge{
+      border:1px solid var(--ring);
+      background:transparent;
+      padding:6px 10px;
+      border-radius:6px;
+      font-size:14px;
+      color:#e6d0bf;
+      text-decoration:none;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .badge:hover{
+      transform:translateY(-1px);
+      box-shadow:0 6px 16px rgba(0,0,0,.15);
+      background:color-mix(in oklab, var(--panel) 12%, transparent);
+    }
+
+    /* EXPERIENCE cards */
     #experience .xp {
       border: 2px solid var(--brand);
       border-radius: 14px;
@@ -44,77 +70,77 @@
       box-shadow: inset 0 0 0 1px var(--ring), var(--shadow);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    #experience .xp:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    #experience .xp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+    #experience h2 { margin-bottom: 14px; color: #e6d0bf; }
+    #experience h3 { color: #974c1f; margin-bottom: 2px; }
+    #experience .meta { color: #974c1f; font-weight: 500; margin-top: 0; }
+    #experience li, #experience strong { color: #223b3f; }
+
+    /* EDUCATION styling */
+    #education .edu {
+      border: 2px solid var(--brand);
+      border-radius: 14px;
+      padding: 16px 18px;
+      background: color-mix(in oklab, var(--panel) 90%, var(--bg));
+      box-shadow: inset 0 0 0 1px var(--ring), var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    #education .edu:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.15) }
+    #education h2 { margin-bottom: 14px; color: #e6d0bf }
+    #education h3 { color: var(--brand); margin-bottom: 2px }
+    #education .meta { color: var(--brand); font-weight: 500; margin-top: 0 }
+    #education li, #education strong { color: var(--text) }
+    #education .edu-list { display: grid; grid-template-columns: 1fr; gap: 16px }
+    @media (min-width: 768px){ #education .edu-list { grid-template-columns: repeat(2, 1fr) } }
+
+    /* Education card header layout */
+    .edu-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
     }
 
-    /* Section title */
-    #experience h2 {
-      margin-bottom: 14px;
-      color: #e6d0bf;
+    .edu-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
     }
 
-    /* Subtitles (job titles) use brand color */
-    #experience h3 {
+    /* Logos */
+    .edu-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      background: transparent;
+      flex-shrink: 0;
+    }
+
+    /* Meta text (date/location) */
+    #education .meta {
       color: #974c1f;
-      margin-bottom: 2px; /* reduce spacing below job title */
+      font-weight: 600;
+      margin: 2px 0 0 0;
+      font-size: 0.95em;
     }
 
-    /* Date & location line */
-    #experience .meta {
-      color: #974c1f;
-      font-weight: 500;
-      margin-top: 0; /* ensure no extra gap above */
-    }
 
-    /* Bullet text */
-    #experience li {
-      color: #223b3f;
-    }
-
-    /* Highlight text */
-    #experience strong {
-      color: #223b3f;
-    }
-
-    /* Projects grid refined */
+    /* PROJECTS grid */
     .grid{display:grid;grid-template-columns:1fr;gap:20px}
     @media (min-width: 640px){.grid{grid-template-columns:repeat(2,1fr)}}
     @media (min-width: 1024px){.grid{grid-template-columns:repeat(3,1fr)}}
-    .proj{display:flex;flex-direction:column;overflow:hidden;border-radius:12px;background:var(--panel);border:1px solid var(--ring);box-shadow:var(--shadow)}
+    .proj{display:flex;flex-direction:column;overflow:hidden;border-radius:12px;background:var(--panel);border:1px solid var(--ring);box-shadow:var(--shadow);text-decoration:none;color:inherit;}
+    .proj h3,.proj p{color:var(--text);text-decoration:none}
     .proj .thumb{height:160px;overflow:hidden}
     .proj .thumb img{width:100%;height:100%;object-fit:cover}
     .proj .body{padding:12px 14px}
-    .proj h3{margin:0 0 6px;font-size:16px;color:var(--text)}
-    .proj p{font-size:14px;line-height:1.4;color:var(--text)}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .badge{border:1px solid var(--ring);background:transparent;padding:6px 10px;border-radius:6px;font-size:14px;color:#e6d0bf}
 
     .hero{display:flex;align-items:center;justify-content:center;padding:40px 0}
     .hero .row{display:flex;flex-direction:column;gap:30px;align-items:center}
     @media(min-width:768px){.hero .row{flex-direction:row;justify-content:space-between}}
     .hero-img img{max-width:320px;border-radius:12px;box-shadow:var(--shadow)}
     .chip{color:#e6d0bf;font-weight:500}
-
-    .proj {
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-  border-radius:12px;
-  background:var(--panel);
-  border:1px solid var(--ring);
-  box-shadow:var(--shadow);
-  text-decoration:none; /* remove underlines */
-  color:inherit;        /* inherit normal text color */
-}
-
-.proj h3,
-.proj p {
-  text-decoration:none; /* ensure no underline on text */
-  color:var(--text);    /* keep the project text color */
-}
-
   </style>
 </head>
 <body>
@@ -125,6 +151,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -148,11 +175,11 @@
         <h1>Hi, I’m Karen — I turn messy data into clear, actionable stories.</h1>
         <p class="lead">I’m Karen, an aspiring data analyst with a background in sales and engineering. I turn raw data into clear insights and practical dashboards that help teams make better decisions.</p>
         <div class="cta">
-          <a class="btn" href="#projects">See projects</a>
-          <a class="btn btn-ghost" href="karen-amarillys-cv.pdf" download>Download CV</a>
-        </div>
-        <p class="muted" style="margin-top:12px">
-          <a href="https://linkedin.com/in/karen-amarillys/" style="color:inherit;text-decoration:underline">LinkedIn</a>
+        <a class="btn" href="#projects">See projects</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/karen-amarillys/" target="_blank" rel="noopener noreferrer">
+          Visit LinkedIn
+        </a>
+      </div>
         </p>
       </div>
     </div>
@@ -165,14 +192,6 @@
         <h2>About</h2>
         <p>I am a results-driven professional with over 2 years of experience in sales, now transitioning into data analytics. During my time as a Sales Executive, I achieved 95% year-on-year sales growth (2024–2025) by analyzing customer and market data to identify new opportunities. This experience sparked my passion for data-driven decision-making, leading me to build strong skills in SQL, Python (pandas), and Tableau. Through these tools, I’ve completed end-to-end data projects that turned raw datasets into actionable insights. I am especially interested in pursuing a Sales Analytics role, where I can combine my business acumen and analytical expertise to help companies optimize sales performance, enhance customer retention, and drive strategic growth.</p>
       </div>
-      <aside class="card">
-        <h2 class="sr-only">Quick facts</h2>
-        <ul class="facts">
-          <li>🎓 Parahyangan Catholic University • B.Eng. Chemical Engineering</li>
-          <li>🧭 Focus: analytics, dashboards, storytelling</li>
-          <li>🗂️ Tools: Python, SQL, Tableau, Sheets</li>
-        </ul>
-      </aside>
     </div>
   </section>
 
@@ -190,19 +209,58 @@
     </div>
   </section>
 
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="edu-list">
+
+        <!-- RevoU -->
+        <article class="edu">
+          <div class="edu-header">
+            <img src="revou-logo.png" alt="RevoU logo" class="edu-logo">
+            <div class="edu-title">
+              <h3>RevoU</h3>
+              <p class="meta">Full Stack Data Analytics, Jun – Sep 2025</p>
+            </div>
+          </div>
+          <ul>
+            <li>Developed skills in data cleaning, visualization, SQL, Python, and Tableau through hands-on case studies.</li>
+            <li>Data End-to-End Portfolio Project: <strong>Safebite Analytics — Food Adulteration Analysis</strong>.</li>
+          </ul>
+        </article>
+
+        <!-- UNPAR -->
+        <article class="edu">
+          <div class="edu-header">
+            <img src="unpar-logo.png" alt="Parahyangan Catholic University logo" class="edu-logo">
+            <div class="edu-title">
+              <h3>Parahyangan Catholic University</h3>
+              <p class="meta">Chemical Engineering, 2018 – 2022</p>
+            </div>
+          </div>
+          <ul>
+            <li>Focused on process engineering and applied chemistry with strong emphasis on laboratory analysis and quality control.</li>
+            <li>Thesis: <strong>Effect of F:S (Feed:Solvent) Variations and Solvent Types on the Antioxidant Activity of Rose Leaf Extract</strong>.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="container">
       <h2>Experience</h2>
       <div class="xp-list">
-
         <article class="xp" aria-label="Sales Executive at PT. Colorindo Chemtra">
           <h3>Sales Executive — PT. Colorindo Chemtra</h3>
           <div class="meta">Jan 2023 – Jun 2025 · Jakarta, Indonesia</div>
           <ul>
             <li>Built and maintained relationships with <strong>70+ active customers</strong> by documenting individual needs through regular visits and phone contacts, improving retention and driving repeat purchases by <strong>130%</strong>.</li>
-            <li>Promoted products to new and existing clients through exhibitions and regular visits, expanding my personal customer base to <strong>~300 customers</strong> and contributing to overall revenue growth.</li>
-            <li>Executed targeted customer engagement strategies that delivered <strong>95% year‑on‑year sales growth</strong>.</li>
+           <li>Promoted products to new and existing clients through exhibitions and regular visits, expanding my personal customer base to <strong>~300 customers</strong> and contributing to overall revenue growth.</li>
+           <li>Executed targeted customer engagement strategies that delivered <strong>95% year‑on‑year sales growth</strong>.</li>
           </ul>
         </article>
 
@@ -212,22 +270,20 @@
           <ul>
             <li>Assisted and evaluated <strong>78 second-year students</strong> during the first in-person lab sessions after COVID using standardized experiment guidelines and team-based supervision, ensuring consistent instruction and adherence to safety protocols.</li>
             <li>Developed standardized guides and coordinated <strong>7 co-assistants</strong> by aligning materials with updated post-COVID curriculum, then formatted them into shared PowerPoint and pre-lab briefings, ensuring consistent instruction and <strong>100% on-schedule completion</strong> of all sessions.</li>
-          </ul>
         </article>
 
-        <article class="xp" aria-label="Industrial Microbiology Lab Assistant at Parahyangan Catholic University">
+        <article class="xp" aria-label="Basic Science Lab Assistant at Parahyangan Catholic University">
           <h3>Basic Science Laboratory Assistant — Parahyangan Catholic University</h3>
           <div class="meta">Aug 2021 – Dec 2021 · Bandung, Indonesia</div>
           <ul>
             <li>Monitored and assessed <strong>60 first-year students</strong> using structured evaluation forms and experiment rubrics, ensuring clear understanding of each experiment’s objectives and procedures.</li>
             <li> Standardized experiment workflows and managed <strong>9 co-assistants</strong> via collaborative documentation (PowerPoint + Google Sheets), achieving full delivery consistency across all lab sessions.</li>
           </ul>
+          </ul>
         </article>
-
       </div>
     </div>
   </section>
-
 
   <!-- PROJECTS -->
   <section id="projects">
@@ -241,7 +297,7 @@
           </div>
           <div class="body">
             <h3>Safebite Analytics — Food Adulteration</h3>
-            <p>Exploratory analysis to identify high‑risk products/brands and prioritize enforcement actions.</p>
+            <p>Exploratory analysis identifying high-risk products and enforcement priorities.</p>
           </div>
         </a>
 
@@ -252,7 +308,7 @@
           </div>
           <div class="body">
             <h3>Revobank — Sales Performance & RFM</h3>
-            <p>Credit-card portfolio analysis with data cleaning, EDA, RFM segmentation, and actionable retention plays.</p>
+            <p>Credit-card portfolio analysis using EDA and RFM segmentation.</p>
           </div>
         </a>
 
@@ -263,10 +319,9 @@
           </div>
           <div class="body">
             <h3>RevoFinance — Expense & Budget Dashboard</h3>
-            <p>End‑to‑end data join + Tableau dashboard to track spend, budget utilization, and seasonal trends.</p>
+            <p>Tableau dashboard tracking spending, budget, and seasonal trends.</p>
           </div>
         </a>
-
 
         <!-- SQL RevoGrocers -->
         <a class="proj" href="%5BSQL%20JUN25%5D%20Karen_Amarillys.pdf" target="_blank" rel="noreferrer" aria-label="Open SQL RevoGrocers PDF">
@@ -275,18 +330,7 @@
           </div>
           <div class="body">
             <h3>RevoGrocers — SQL Sales Analysis</h3>
-            <p>BigQuery SQL case study: category revenue, unique customers, pricing, and repeat purchase rate.</p>
-          </div>
-        </a>
-
-        <!-- UBP Week 1 -->
-        <a class="proj" href="%5BW1_JUN25_UBP%5D%20karen_amarillys.pdf" target="_blank" rel="noreferrer" aria-label="Open UBP E‑commerce PDF">
-          <div class="thumb">
-            <embed src="%5BW1_JUN25_UBP%5D%20karen_amarillys.pdf#page=1&view=FitH" type="application/pdf" style="width:100%;height:100%" />
-          </div>
-          <div class="body">
-            <h3>RevoStore — Profit Decline Analysis</h3>
-            <p>Structured business analysis to diagnose profit drop and propose margin, discount, and campaign fixes.</p>
+            <p>SQL case study on category revenue, repeat customers, and pricing.</p>
           </div>
         </a>
 
@@ -296,18 +340,20 @@
             <embed src="%5BW2W3%20JUN25%5D_Karen_Amarillys_intermediate.pdf#page=1&view=FitH" type="application/pdf" style="width:100%;height:100%" />
           </div>
           <div class="body">
-            <h3>TokoBli — Campaign Evaluation (10/10, 11/11, 12/12)</h3>
-            <p>Compare campaign efficiency, revenue, cart size, and A/B test results to inform the next promo.</p>
+            <h3>TokoBli — Campaign Evaluation</h3>
+            <p>Comparison of 10/10–11/11–12/12 campaigns to optimize the next promo.</p>
           </div>
         </a>
-      </section>
+      </div> <!-- end .grid -->
+    </div> <!-- end .container -->
+  </section> <!-- end #projects -->
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="container contact">
       <div class="card">
         <h2>Get in touch</h2>
-        <p class="muted">Prefer email? Great. I usually respond within a business day.</p>
+        <p class="muted">Prefer email? I usually respond within a business day.</p>
         <p><strong>Email:</strong> <a href="mailto:karen.amarillys@gmail.com" style="color:inherit">karen.amarillys@gmail.com</a></p>
         <p><strong>WhatsApp:</strong> <a href="https://wa.me/628179864182" style="color:inherit">+62 •••• ••••</a></p>
       </div>
@@ -331,5 +377,3 @@
   </script>
 </body>
 </html>
-
-
