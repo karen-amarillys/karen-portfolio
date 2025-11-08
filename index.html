@@ -6,233 +6,89 @@
   <title>Karen Amarillys — Portfolio</title>
   <meta name="description" content="Data Analyst — projects, skills, and contact." />
   <style>
-    :root{
-      --bg: #385253;
-      --panel: #e6d0bf;
-      --text: #223b3f;
-      --muted: #e5af90;
-      --brand: #974c1f;
-      --ring: #c7b6a9;
-      --card: #e6d0bf;
-      --shadow: 0 12px 28px rgba(0,0,0,.12)
-    }
-    html{scroll-behavior:smooth}
-    body{margin:0;min-height:100dvh;color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;background:var(--bg)}
-    .container{max-width:1150px;margin:0 auto;padding:0 20px}
-    .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:color-mix(in oklab, var(--bg) 85%, transparent);border-bottom:1px solid var(--ring);z-index:50}
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{font-weight:800;letter-spacing:.3px;color:#e6d0bf}
-    .nav a{color:#e6d0bf;text-decoration:none}
-    .nav-links{display:none;gap:22px}
-    @media (min-width: 768px){.nav-links{display:flex}}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:#fff;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .15s ease}
-    .btn:hover{transform:translateY(-1px)}
-    .btn-ghost{border:1px solid var(--brand);background:transparent;color:#e6d0bf}
-    .btn-ghost:hover{background:var(--brand);color:#fff}
-    .icon{width:18px;height:18px;display:inline-block}
-    section h2{color:#e6d0bf}
-    h1,h2,h3,p,li,small{color:#e6d0bf}
-    .muted{color:var(--muted)}
+  :root{
+    --bg:#385253; --panel:#e6d0bf; --text:#223b3f; --muted:#e5af90;
+    --brand:#974c1f; --ring:#c7b6a9; --card:#e6d0bf;
+    --shadow:0 12px 28px rgba(0,0,0,.12)
+  }
 
-    /* Skill badges (frames) */
-    .badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:10px;
-    }
-    .badge{
-      border:1px solid var(--ring);
-      background:transparent;
-      padding:6px 10px;
-      border-radius:6px;
-      font-size:14px;
-      color:#e6d0bf;
-      text-decoration:none;
-      line-height:1;
-      display:inline-flex;
-      align-items:center;
-      box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-    .badge:hover{
-      transform:translateY(-1px);
-      box-shadow:0 6px 16px rgba(0,0,0,.15);
-      background:color-mix(in oklab, var(--panel) 12%, transparent);
-    }
+  /* Base */
+  html{scroll-behavior:smooth}
+  body{margin:0;min-height:100dvh;color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;background:var(--bg)}
+  .container{max-width:1150px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,p,li,small{color:#e6d0bf}
+  .muted{color:var(--muted)}
+  .icon{width:18px;height:18px;display:inline-block}
 
-    /* EXPERIENCE cards */
-    #experience .xp {
-      border: 2px solid var(--brand);
-      border-radius: 14px;
-      padding: 16px 18px;
-      background: color-mix(in oklab, var(--panel) 90%, var(--bg));
-      box-shadow: inset 0 0 0 1px var(--ring), var(--shadow);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    #experience .xp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
-    #experience h2 { margin-bottom: 14px; color: #e6d0bf; }
-    #experience h3 { color: #974c1f; margin-bottom: 2px; }
-    #experience .meta { color: #974c1f; font-weight: 500; margin-top: 0; }
-    #experience li, #experience strong { color: #223b3f; }
+  /* Nav */
+  .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:color-mix(in oklab, var(--bg) 85%, transparent);border-bottom:1px solid var(--ring);z-index:50}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:800;letter-spacing:.3px;color:#e6d0bf}
+  .nav a{color:#e6d0bf;text-decoration:none}
+  .nav-links{display:none;gap:22px}
+  @media (min-width:768px){.nav-links{display:flex}}
 
-    /* EDUCATION styling */
-    #education .edu {
-      border: 2px solid var(--brand);
-      border-radius: 14px;
-      padding: 16px 18px;
-      background: color-mix(in oklab, var(--panel) 90%, var(--bg));
-      box-shadow: inset 0 0 0 1px var(--ring), var(--shadow);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    #education .edu:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.15) }
-    #education h2 { margin-bottom: 14px; color: #e6d0bf }
-    #education h3 { color: var(--brand); margin-bottom: 2px }
-    #education .meta { color: var(--brand); font-weight: 500; margin-top: 0 }
-    #education li, #education strong { color: var(--text) }
-    #education .edu-list { display: grid; grid-template-columns: 1fr; gap: 16px }
-    @media (min-width: 768px){ #education .edu-list { grid-template-columns: repeat(2, 1fr) } }
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:#fff;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--brand);background:transparent;color:#e6d0bf}
+  .btn-ghost:hover{background:var(--brand);color:#fff}
 
-    /* Education card header layout */
-    .edu-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 8px;
-    }
+  /* Badges (used for skills/tools rows) */
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .badge{border:1px solid var(--ring);background:transparent;padding:6px 10px;border-radius:6px;font-size:14px;color:#e6d0bf;text-decoration:none;line-height:1;display:inline-flex;align-items:center;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+  .badge:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.15);background:color-mix(in oklab, var(--panel) 12%, transparent)}
 
-    .edu-title {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 1;
-    }
+  /* Education */
+  #education .edu{border:2px solid var(--brand);border-radius:14px;padding:16px 18px;background:color-mix(in oklab, var(--panel) 90%, var(--bg));box-shadow:inset 0 0 0 1px var(--ring),var(--shadow);transition:transform .15s ease,box-shadow .15s ease}
+  #education .edu:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
+  #education h2{margin-bottom:14px}
+  #education h3{color:var(--brand);margin-bottom:2px}
+  #education li,#education strong{color:var(--text)}
+  #education .edu-list{display:grid;grid-template-columns:1fr;gap:16px}
+  @media (min-width:768px){#education .edu-list{grid-template-columns:repeat(2,1fr)}}
+  .edu-header{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .edu-title{display:flex;flex-direction:column;justify-content:center;flex:1}
+  .edu-logo{width:42px;height:42px;object-fit:contain;background:transparent;flex-shrink:0}
+  #education .meta{color:#974c1f;font-weight:600;margin:2px 0 0 0;font-size:.95em}
 
-    /* Logos */
-    .edu-logo {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      background: transparent;
-      flex-shrink: 0;
-    }
+  /* Experience */
+  #experience .xp{border:2px solid var(--brand);border-radius:14px;padding:16px 18px;background:color-mix(in oklab, var(--panel) 90%, var(--bg));box-shadow:inset 0 0 0 1px var(--ring),var(--shadow);transition:transform .15s ease,box-shadow .15s ease}
+  #experience .xp:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
+  #experience h2{margin-bottom:14px}
+  #experience h3{color:#974c1f;margin-bottom:2px}
+  #experience .meta{color:#974c1f;font-weight:500;margin-top:0}
+  #experience li,#experience strong{color:#223b3f}
 
-    /* Meta text (date/location) */
-    #education .meta {
-      color: #974c1f;
-      font-weight: 600;
-      margin: 2px 0 0 0;
-      font-size: 0.95em;
-    }
+  /* Projects grid + thumbnail PDF-crop */
+  .grid{display:grid;grid-template-columns:1fr;gap:20px}
+  @media (min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .proj{display:flex;flex-direction:column;overflow:hidden;border-radius:12px;background:var(--panel);border:1px solid var(--ring);box-shadow:var(--shadow);text-decoration:none;color:inherit;position:relative}
+  .proj h3,.proj p{color:var(--text);text-decoration:none}
+  .proj .thumb{height:160px;overflow:hidden;border-top-left-radius:12px;border-top-right-radius:12px;background:var(--card)}
+  .proj .thumb embed{width:calc(100% + 40px);height:calc(100% + 40px);margin:-20px 0 0 -20px;display:block;border:0;pointer-events:none}
+  .proj .body{padding:12px 14px}
 
+  /* Hero */
+  .hero{display:flex;align-items:center;justify-content:center;padding:40px 0}
+  .hero .row{display:flex;flex-direction:column;gap:30px;align-items:center}
+  @media (min-width:768px){.hero .row{flex-direction:row;justify-content:space-between}}
+  .hero-img img{max-width:320px;border-radius:12px;box-shadow:var(--shadow)}
+  .chip{color:#e6d0bf;font-weight:500}
 
-    /* PROJECTS grid */
-    .grid{display:grid;grid-template-columns:1fr;gap:20px}
-    @media (min-width: 640px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (min-width: 1024px){.grid{grid-template-columns:repeat(3,1fr)}}
-    .proj{display:flex;flex-direction:column;overflow:hidden;border-radius:12px;background:var(--panel);border:1px solid var(--ring);box-shadow:var(--shadow);text-decoration:none;color:inherit;}
-    .proj h3,.proj p{color:var(--text);text-decoration:none}
-    .proj .thumb{height:160px;overflow:hidden}
-    .proj .thumb img{width:100%;height:100%;object-fit:cover}
-    .proj .body{padding:12px 14px}
+  /* Skills: 3-card layout */
+  .skills-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:14px}
+  @media(min-width:880px){.skills-grid{grid-template-columns:repeat(3,1fr)}}
+  .skills-card{background:color-mix(in oklab, var(--panel) 88%, var(--bg));border:2px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);padding:18px 18px 16px}
+  .skills-card h3{margin:0 0 10px 0;color:var(--brand)}
+  .skills-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .skills-list li{background:transparent;border:1px solid var(--ring);color:var(--text);border-radius:10px;padding:10px 12px;box-shadow:0 2px 6px rgba(0,0,0,.08);display:flex;align-items:center;gap:10px;transition:transform .12s ease,box-shadow .12s ease,background .12s ease}
+  .skills-list li:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,.18);background:color-mix(in oklab, var(--panel) 12%, transparent)}
 
-    .hero{display:flex;align-items:center;justify-content:center;padding:40px 0}
-    .hero .row{display:flex;flex-direction:column;gap:30px;align-items:center}
-    @media(min-width:768px){.hero .row{flex-direction:row;justify-content:space-between}}
-    .hero-img img{max-width:320px;border-radius:12px;box-shadow:var(--shadow)}
-    .chip{color:#e6d0bf;font-weight:500}
-
-/* Make PDF preview look like an image and click-through to detail page */
-.proj { position: relative; }
-.proj .thumb{
-  height: 160px;            /* your old height */
-  overflow: hidden;         /* clip any scrollbars */
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  background: var(--card);
-}
-.proj .thumb embed{
-  /* oversize + offset to push built-in PDF scrollbars out of view */
-  width: calc(100% + 40px);
-  height: calc(100% + 40px);
-  margin: -20px 0 0 -20px;
-
-  display: block;
-  border: 0;
-  pointer-events: none;     /* pass clicks to the anchor */
-}
-    /* --- Skills section (three-card layout) --- */
-.skills-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
-  margin-top:14px;
-}
-@media(min-width:880px){
-  .skills-grid{grid-template-columns:repeat(3,1fr)}
-}
-
-.skills-card{
-  background: color-mix(in oklab, var(--panel) 88%, var(--bg));
-  border: 2px solid var(--ring);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  padding: 18px 18px 16px;
-}
-
-.skills-card h3{
-  margin:0 0 10px 0;
-  color: var(--brand);
-}
-
-.skills-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:10px;
-}
-
-/* pill items */
-.skills-list li{
-  background: transparent;
-  border: 1px solid var(--ring);
-  color: var(--text);
-  border-radius: 10px;
-  padding: 10px 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.08);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-}
-.skills-list li:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.18);
-  background: color-mix(in oklab, var(--panel) 12%, transparent);
-}
-
-/* small dot “icon” to mimic badges with logos */
-.skills-list.icons .dot{
-  width:18px; height:18px; border-radius:50%;
-  border:2px solid var(--ring);
-  background: color-mix(in oklab, var(--brand) 35%, transparent);
-  display:inline-block; flex-shrink:0;
-}
-/* --- Tool logos --- */
-.tool-icon {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  flex-shrink: 0;
-  filter: brightness(0) invert(0.9); /* makes icons match your beige theme */
-  transition: transform 0.15s ease, filter 0.15s ease;
-}
-
-.skills-list li:hover .tool-icon {
-  transform: scale(1.08);
-  filter: brightness(1.1);
-}
+  /* Tool logos */
+  .tool-icon{width:22px;height:22px;object-fit:contain;flex-shrink:0;filter:brightness(0) invert(0.9);transition:transform .15s ease,filter .15s ease}
+  .skills-list li:hover .tool-icon{transform:scale(1.08);filter:brightness(1.1)}
   </style>
 </head>
 <body>
@@ -291,8 +147,6 @@
 <section id="skills">
   <div class="container">
     <h2>Skills</h2>
-    <p class="muted" style="margin-top:-6px">I bring strong analytical and problem-solving skills, clear communication, and the ability to turn data into actionable insights.</p>
-
     <div class="skills-grid">
       <!-- Hard Skills -->
       <article class="skills-card">
