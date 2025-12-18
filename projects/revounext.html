@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RevoU Next — Sales Funnel Evaluation</title>
+  <title>RevoBank — Credit Card Portfolio Analysis</title>
   <link rel="stylesheet" href="../assets/project.css" />
   <style>
+    /* --- Section card layout --- */
     .section-card {
       background: color-mix(in oklab, var(--panel) 95%, white);
       border: 2px solid var(--brand);
@@ -19,12 +20,20 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
-    .section-card h2 { color: var(--brand); margin-top: 0; }
-    .section-card ul { padding-left: 20px; }
-    .section-card li { margin-bottom: 6px; }
+    .section-card h2 {
+      color: var(--brand);
+      margin-top: 0;
+    }
+    .section-card ul {
+      padding-left: 20px;
+    }
+    .section-card li {
+      margin-bottom: 6px;
+    }
 
+    /* --- Subtitle & tool badges --- */
     .subtitle {
-      color: var(--muted);
+      color: #e6d0bf;
       font-weight: 600;
       letter-spacing: 0.3px;
       margin-top: 6px;
@@ -56,6 +65,7 @@
       background: color-mix(in oklab, var(--panel) 12%, transparent);
     }
 
+    /* --- Deliverables card --- */
     .deliverables {
       text-align: center;
       background: color-mix(in oklab, var(--panel) 95%, white);
@@ -89,59 +99,58 @@
       transform: translateY(-1px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }/* NAV BAR */
-    .nav {
-      position: sticky;
-      top: 0;
-      backdrop-filter: saturate(160%) blur(8px);
-      background: color-mix(in oklab, var(--bg) 85%, transparent);
-      border-bottom: 1px solid var(--ring);
-      z-index: 50;
-      padding: 10px 0;
-    }
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-    }
-    .project-title {
-      color: #e6d0bf;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      font-size: 1.05rem;
-    }
+        .nav {
+          position: sticky;
+          top: 0;
+          backdrop-filter: saturate(160%) blur(8px);
+          background: color-mix(in oklab, var(--bg) 85%, transparent);
+          border-bottom: 1px solid var(--ring);
+          z-index: 50;
+          padding: 10px 0;
+      }
+        .nav-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 56px;
+        }
+        .project-title {
+          color: #e6d0bf;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          font-size: 1.05rem;
+        }
 
-    /* FRAMED BUTTON */
-    .framed-btn {
-      border: 2px solid var(--brand);
-      background: var(--brand);
-      color: #fff;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-  </style>
-</head>
-</head>
+        /* FRAMED BUTTON */
+        .framed-btn {
+          border: 2px solid var(--brand);
+          background: var(--brand);
+          color: #fff;
+          transform: translateY(-1px);
+          box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+      </style>
+    </head>
 
-<body>
-  <!-- NAV -->
-  <nav class="nav" aria-label="Project Navigation">
-    <div class="container nav-wrap">
-      <a class="framed-btn" href="../index.html#projects">← Back to Portfolio</a>
-      <span class="project-title">RevoU Next Project</span>
-    </div>
-  </nav>
-
+    <body>
+      <!-- NAV -->
+      <nav class="nav" aria-label="Project Navigation">
+        <div class="container nav-wrap">
+          <a class="btn btn-ghost framed-btn" href="../index.html">
+            ← Back to Portfolio
+          </a>
+          <span class="project-title">RevoBank</span>
+        </div>
+      </nav>
   <header class="hero">
     <div class="container">
-      <h1>RevoU Next — Sales Funnel Evaluation</h1>
-      <p class="subtitle">B2B SaaS Funnel Analysis | RevoU Full-Stack Data Analytics</p>
+      <h1>RevoBank — Credit Card Portfolio Analysis</h1>
+      <p class="subtitle">Customer Segmentation and Credit Risk Evaluation | RevoU Full-Stack Data Analytics</p>
 
       <div class="badges" aria-label="Tools used">
-        <span class="badge">Google Sheets / Excel</span>
-        <span class="badge">Funnel Metrics</span>
-        <span class="badge">Segmentation (Micro / SMB / Mid-Large)</span>
-        <span class="badge">A/B Testing</span>
-        <span class="badge">SQL (Appendix)</span>
+        <span class="badge">Python</span>
+        <span class="badge">Google Colab</span>
+        <span class="badge">RFM Analysis</span>
+        <span class="badge">Clustering</span>
       </div>
     </div>
   </header>
