@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RevoFin — Portfolio Risk & Cohort Analysis</title>
+  <link rel="stylesheet" href="../assets/project.css" />
+  <style>
+    .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:color-mix(in oklab, var(--bg) 85%, transparent);border-bottom:1px solid var(--ring);z-index:50;padding:10px 0}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .framed-btn{border:2px solid var(--brand);background:transparent;color:#e6d0bf;font-weight:700;padding:8px 16px;border-radius:12px;box-shadow:inset 0 0 0 1px var(--ring);text-decoration:none;transition:all .15s ease}
+    .framed-btn:hover{background:var(--brand);color:#fff;transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,.25)}
+    .project-title{color:#e6d0bf;font-weight:700;letter-spacing:.3px}
+
+    .subtitle{color:#e6d0bf;font-weight:600;letter-spacing:.3px;margin-top:6px;margin-bottom:12px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .badge{border:1px solid var(--ring);background:transparent;padding:6px 10px;border-radius:6px;font-size:14px;color:#e6d0bf;line-height:1;display:inline-flex;align-items:center;box-shadow:var(--shadow)}
+    .section-card{background:color-mix(in oklab, var(--panel) 95%, white);border:2px solid var(--brand);border-radius:16px;padding:24px;margin-top:24px;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .section-card h2{color:var(--brand);margin-top:0}
+    .section-card ul{padding-left:20px}
+    .deliverables{text-align:center;background:color-mix(in oklab, var(--panel) 95%, white);border:2px solid var(--brand);border-radius:16px;padding:30px 24px;margin-top:24px;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .deliverable-buttons{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Project Navigation">
+    <div class="container nav-wrap">
+      <a class="framed-btn" href="../index.html#projects">← Back to Portfolio</a>
+      <span class="project-title">RevoFin Project</span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>RevoFin — Portfolio Risk & Cohort Analysis</h1>
+      <p class="subtitle">SQL-Based Risk Analytics | Yearly Analytical Report</p>
+
+      <div class="badges" aria-label="Tools used">
+        <span class="badge">SQL</span>
+        <span class="badge">Risk Metrics (OS / ENR / TKB30)</span>
+        <span class="badge">Cohort Analysis</span>
+        <span class="badge">Borrower Profiling</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="thumb" style="height:240px;overflow:hidden;border-radius:12px;border:1px solid var(--ring);margin-bottom:20px;">
+      <embed src="../revofin_fip_karen.pdf#page=1&view=FitH" type="application/pdf" width="100%" height="100%">
+    </div>
+
+    <section class="section-card">
+      <h2>Background & Context</h2>
+      <p>
+        RevoFin is modeled as a lending/fintech portfolio. This project summarizes portfolio scale and repayment risk using core metrics,
+        then evaluates repayment quality over time using cohort analysis to highlight where deterioration may occur and what borrower traits
+        are associated with higher risk.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>Approach, Method & Strategy</h2>
+      <ul>
+        <li>Defined and reported portfolio KPIs: <strong>OS</strong> (Outstanding), <strong>ENR</strong> (Exposure/earning-related), and <strong>TKB30</strong> (repayment quality indicator).</li>
+        <li>Computed cohort metrics by issue year to compare repayment quality trends across vintages.</li>
+        <li>Profiled higher-risk cohorts using loan attributes (purpose, interest rate) and borrower attributes (income, employment, home ownership).</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Results & Key Insights</h2>
+      <ul>
+        <li><strong>Portfolio scale:</strong> <strong>176,087</strong> customers with total <strong>OS ≈ 28.01B</strong> and <strong>ENR ≈ 28.01B</strong>.</li>
+        <li><strong>Portfolio health:</strong> <strong>TKB30 = 98.11%</strong> (only ~1.89% past due beyond 30 days), indicating overall strong repayment quality.</li>
+        <li><strong>Cohort trend:</strong> Repayment quality improves in newer cohorts; the weakest cohort shows structural financial weaknesses.</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Recommendations</h2>
+      <ul>
+        <li><strong>Strengthen screening:</strong> Enhance asset-based screening (e.g., home ownership) and tighten approval thresholds for higher-risk profiles.</li>
+        <li><strong>Early warning:</strong> Implement monitoring for high-interest borrowers and cohorts showing weakening repayment signals.</li>
+        <li><strong>Risk-based pricing + controls:</strong> Maintain pricing by risk, but pair with stricter underwriting standards to protect repayment quality.</li>
+      </ul>
+    </section>
+
+    <section class="deliverables">
+      <h2 style="text-align:center;color:var(--brand);margin-top:0;">Deliverables</h2>
+      <p style="text-align:center;color:var(--text);margin-bottom:18px;">Open the full report below.</p>
+      <div class="deliverable-buttons">
+        <a class="btn btn-ghost" href="../revofin_fip_karen.pdf" target="_blank" rel="noreferrer">Open PDF Report</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" style="margin-top:40px;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <small>© <span id="year"></span> Karen Amarillys. All rights reserved.</small>
+      <nav aria-label="Footer">
+        <a href="../index.html#projects" class="muted" style="margin-right:10px">Projects</a>
+        <a href="../index.html#contact" class="muted">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
