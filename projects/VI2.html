@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telkom OCA — User Segmentation Analysis</title>
+  <link rel="stylesheet" href="../assets/project.css" />
+
+  <style>
+    /* identical styles to RevoBank / OCA page */
+    .section-card {
+      background: color-mix(in oklab, var(--panel) 95%, white);
+      border: 2px solid var(--brand);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .section-card h2 { color: var(--brand); margin-top: 0; }
+    .subtitle { color:#e6d0bf; font-weight:600; margin-bottom:12px; }
+    .badges { display:flex; flex-wrap:wrap; gap:10px; }
+    .badge {
+      border:1px solid var(--ring);
+      padding:6px 10px;
+      border-radius:6px;
+      color:#e6d0bf;
+    }
+    .nav {
+      position:sticky;
+      top:0;
+      backdrop-filter:saturate(160%) blur(8px);
+      background:color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:1px solid var(--ring);
+      padding:10px 0;
+    }
+    .nav-wrap {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      height:56px;
+    }
+    .framed-btn {
+      border:2px solid var(--brand);
+      background:var(--brand);
+      color:#fff;
+      box-shadow:0 6px 14px rgba(0,0,0,.25);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container nav-wrap">
+      <a class="btn btn-ghost framed-btn" href="../index.html">← Back to Portfolio</a>
+      <span class="project-title">Telkom OCA</span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Telkom OCA — User Segmentation & Risk Monitoring</h1>
+      <p class="subtitle">
+        SQL-Based RFM Segmentation & Retention Strategy | RevoU x Telkom Indonesia
+      </p>
+
+      <div class="badges">
+        <span class="badge">SQL</span>
+        <span class="badge">RFM Segmentation</span>
+        <span class="badge">Cohort Analysis</span>
+        <span class="badge">Churn Risk</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="thumb" style="height:580px; overflow:hidden; border-radius:12px; border:1px solid var(--ring); margin-bottom:20px;">
+      <embed src="../telkom-oca-segmentation.pdf#page=1&view=FitH" type="application/pdf" width="100%" height="100%">
+    </div>
+
+    <section class="section-card">
+      <h2>Background & Context</h2>
+      <p>
+        This project evaluated active user behavior on Telkom OCA’s messaging platform to
+        understand engagement quality, churn risk, and revenue contribution across customers.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>Approach, Method & Strategy</h2>
+      <ul>
+        <li>Performed SQL-based data preparation and feature engineering.</li>
+        <li>Applied rule-based RFM segmentation to classify <strong>20 active users</strong>.</li>
+        <li>Mapped user segments to behavioral risk and engagement patterns.</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Results & Key Insights</h2>
+      <ul>
+        <li>High-value users showed consistent usage and low churn risk.</li>
+        <li>Low-frequency users indicated early disengagement signals.</li>
+        <li>Distinct usage patterns emerged across segments.</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Implement proactive engagement for low-frequency segments.</li>
+        <li>Design retention playbooks tailored to RFM groups.</li>
+        <li>Monitor at-risk users through periodic cohort reviews.</li>
+      </ul>
+    </section>
+
+    <section class="section-card deliverables">
+      <h2>Deliverables</h2>
+      <div class="deliverable-buttons">
+        <a class="btn btn-ghost" href="../OCA-VI2_Karen.pdf" target="_blank">
+          Open PDF Report
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
